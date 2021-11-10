@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action= "" method="POST">
+    <fieldset>
+       <legend>Select UNITS of Conversion</legend>
+       <select name= "Units"  >
+        {% for unit in units %}
+        <option value= "{{unit}}" SELECTED>{{unit}}</option>"
+        {% endfor %}
+    </select>
+    </fieldset>
+    <fieldset>
+       <legend>Input Value </legend>
+       <input name= "Value"  type= "number" >
+    </input>
+    </fieldset>
+    <fieldset>
+         <legend>Result </legend>
+           {% if request.method == 'POST' %}
+         <input  value="{{ mide }}">
+            {% else %}
+         <input type="number" value="{{ 0 }}">
+            {% endif %}
+    </fieldset>
+    <input type="submit" value="Submit">
+   </form>
+{% endblock %}
+
+
+
